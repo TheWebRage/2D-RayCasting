@@ -71,13 +71,6 @@ int main()
 			sleep(seconds(0.2));
 		}
 
-		// Remove wall color if key is pressed
-		if (Keyboard::isKeyPressed(Keyboard::Space))
-		{
-			if (wall_color == Color::Red) wall_color.Black;
-			else wall_color.Red;
-		}
-
 		// Update mouse pos
 		g_mouse_pos = Vector2f(Mouse::getPosition(window));
 
