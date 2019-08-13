@@ -12,5 +12,5 @@ public:
 	void calc_hit(Vector2f wall1, Vector2f wall2);
 	void reset();
 private:
-	Vector2f m_relative_end;
+	Vector2f m_relative_end; // also known as max ray length
 };

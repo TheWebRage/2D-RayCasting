@@ -6,9 +6,9 @@ Vector2f g_mouse_pos = Vector2f(0, 0);
 int main()
 {
 	// Settings
-	const float    ray_density = 1000;
-	const Color    ray_color = Color(255, 255, 255, 10);
-	const Color    wall_color = Color::Red;
+	const float    ray_density = 1000; //Also can be brightness
+	const Color    ray_color = Color(0, 255, 255, 10); //Set the light color
+	const Color    wall_color = Color::Red; //Set the wall color
 	const Vector2f window_size(900, 900);
 
 	// Initialize randomizer
@@ -61,7 +61,7 @@ int main()
 		}
 
 		// Re-randomize walls if key is pressed
-		if (Keyboard::isKeyPressed(Keyboard::R) || Keyboard::isKeyPressed(Keyboard::Space))
+		if (Keyboard::isKeyPressed(Keyboard::R))
 		{
 			for (int i = 0; i < walls.size(); i++)
 			{
@@ -71,10 +71,17 @@ int main()
 			sleep(seconds(0.2));
 		}
 
+		// Remove wall color if key is pressed
+		if (Keyboard::isKeyPressed(Keyboard::Space))
+		{
+			if (wall_color == Color::Red) wall_color.Black;
+			else wall_color.Red;
+		}
+
 		// Update mouse pos
 		g_mouse_pos = Vector2f(Mouse::getPosition(window));
 
-		// If mouse if the same as previous frame, move on to the next
+		// If mouse is the same as previous frame, move on to the next
 		if (mouse_snapshot == g_mouse_pos)
 			continue;
 

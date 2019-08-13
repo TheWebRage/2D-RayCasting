@@ -5,7 +5,7 @@ ray::ray(float x, float y)
 {
 	// Set end point relative to mouse cursor
 	// Add arbitrary length
-	m_relative_end = Vector2f(x, y) * 3000.f;
+	m_relative_end = Vector2f(x, y) * 1000.f; //Set ray max distance here
 }
 
 // Reset end-point of ray
